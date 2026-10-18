@@ -1,0 +1,192 @@
+{
+  "grid": "assumed native lon[113,120] lat[36,43], center crop, no extra shift",
+  "dbz_min": 15.0,
+  "min_pixels": 50,
+  "min_speed_m_s": 2.0,
+  "results": [
+    {
+      "pair": "u_radar",
+      "level_hpa": 700,
+      "clock_shift_hours": 0,
+      "n_issue": 366,
+      "n_matched": 366,
+      "n_missing_era": 0,
+      "summary": {
+        "r_east": {
+          "n": 312,
+          "mean": 0.1919468539590006,
+          "median": 0.23567527204706198
+        },
+        "r_north": {
+          "n": 312,
+          "mean": 0.10426266558837181,
+          "median": 0.11831688095168207
+        },
+        "r_speed": {
+          "n": 312,
+          "mean": 0.13441352339047907,
+          "median": 0.14548559588933554
+        },
+        "dir_err_deg": {
+          "n": 301,
+          "mean": 35.014533692640605,
+          "median": 28.670476470245898
+        },
+        "n_pix": {
+          "n": 366,
+          "mean": 521.9672131147541,
+          "median": 379.5
+        },
+        "spd_model": {
+          "n": 360,
+          "mean": 5.121786640492361,
+          "median": 5.278760616008423
+        },
+        "spd_era": {
+          "n": 360,
+          "mean": 8.213538025128413,
+          "median": 7.962323115608619
+        }
+      },
+      "zone": "utc"
+    },
+    {
+      "pair": "u_pwv",
+      "level_hpa": 850,
+      "clock_shift_hours": 0,
+      "n_issue": 366,
+      "n_matched": 366,
+      "n_missing_era": 0,
+      "summary": {
+        "r_east": {
+          "n": 366,
+          "mean": -0.00487374273675116,
+          "median": -0.004454368352414277
+        },
+        "r_north": {
+          "n": 366,
+          "mean": 0.04876787652426796,
+          "median": 0.045579807944231686
+        },
+        "r_speed": {
+          "n": 366,
+          "mean": 0.08015567895400813,
+          "median": 0.06529821040225334
+        },
+        "dir_err_deg": {
+          "n": 0,
+          "mean": null,
+          "median": null
+        },
+        "n_pix": {
+          "n": 366,
+          "mean": 1028.4289617486338,
+          "median": 1027.0
+        },
+        "spd_model": {
+          "n": 366,
+          "mean": 0.08496790216533134,
+          "median": 0.07470280390154964
+        },
+        "spd_era": {
+          "n": 366,
+          "mean": 4.508766986714788,
+          "median": 4.195485982185897
+        }
+      },
+      "zone": "utc"
+    },
+    {
+      "pair": "u_radar",
+      "level_hpa": 700,
+      "clock_shift_hours": 8,
+      "n_issue": 366,
+      "n_matched": 363,
+      "n_missing_era": 3,
+      "summary": {
+        "r_east": {
+          "n": 311,
+          "mean": 0.14006138386189249,
+          "median": 0.15914696405703888
+        },
+        "r_north": {
+          "n": 311,
+          "mean": 0.043183764057611526,
+          "median": 0.04254379860178656
+        },
+        "r_speed": {
+          "n": 311,
+          "mean": 0.08898251382829463,
+          "median": 0.10789232545346572
+        },
+        "dir_err_deg": {
+          "n": 300,
+          "mean": 38.14737343286315,
+          "median": 34.31491417710629
+        },
+        "n_pix": {
+          "n": 363,
+          "mean": 525.9504132231405,
+          "median": 381.0
+        },
+        "spd_model": {
+          "n": 357,
+          "mean": 5.147397802769704,
+          "median": 5.28440662415859
+        },
+        "spd_era": {
+          "n": 357,
+          "mean": 7.838971768329381,
+          "median": 7.500178541093834
+        }
+      },
+      "zone": "cst"
+    },
+    {
+      "pair": "u_pwv",
+      "level_hpa": 850,
+      "clock_shift_hours": 8,
+      "n_issue": 366,
+      "n_matched": 363,
+      "n_missing_era": 3,
+      "summary": {
+        "r_east": {
+          "n": 363,
+          "mean": 0.024940380817895583,
+          "median": 0.006042740647728327
+        },
+        "r_north": {
+          "n": 363,
+          "mean": 0.003082534799290499,
+          "median": -0.010426041266369111
+        },
+        "r_speed": {
+          "n": 363,
+          "mean": 0.06706114013891955,
+          "median": 0.057866614790477916
+        },
+        "dir_err_deg": {
+          "n": 0,
+          "mean": null,
+          "median": null
+        },
+        "n_pix": {
+          "n": 363,
+          "mean": 1028.457300275482,
+          "median": 1027.0
+        },
+        "spd_model": {
+          "n": 363,
+          "mean": 0.08525127120236181,
+          "median": 0.07494175915974374
+        },
+        "spd_era": {
+          "n": 363,
+          "mean": 4.489077284956426,
+          "median": 4.157488842256251
+        }
+      },
+      "zone": "cst"
+    }
+  ]
+}

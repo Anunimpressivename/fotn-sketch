@@ -1,0 +1,49 @@
+# sketch1_rp with a wider flow branch only. conv/res stay at base_ch 16.
+#
+#   python -u train.py --config configs/config_rp_flow32.yaml
+seed: 42
+device: cuda
+data:
+  train_root: /root/autodl-tmp/datasets/DATA_2023_S
+  eval_root: /root/autodl-tmp/DATA_2025_S
+  train_months: ["202305", "202306", "202307", "202308"]
+  val_months: ["202505"]
+  test_months: ["202508"]
+  t_in: 10
+  t_out: 30
+  image_hw: [64, 64]
+  batch_size: 12
+  num_workers: 4
+  use_precip: false
+model:
+  base_ch: 16
+  flow_base_ch: 32
+  clamp_state: 1.5
+  clamp_s: 1.5
+  a_init: 1.0
+  u_scale: 2.0
+  delta_scale: 0.25
+loss:
+  advect_radar: 1.0
+  advect_pwv: 4.0
+  evo_radar: 1.0
+  evo_pwv: 1.0
+  smooth: 0.05
+  gate: 0.15
+  gate_leads: 4
+train:
+  lr: 2.0e-4
+  weight_decay: 1.0e-4
+  grad_clip: 1.0
+  amp: true
+  ckpt_dir: /root/autodl-fs/fotn/runs/curriculum_sketch1_rp_flow32
+  stages:
+    - name: flow
+      epochs: 20
+      patience: 6
+    - name: conv
+      epochs: 20
+      patience: 6
+    - name: res
+      epochs: 15
+      patience: 5

@@ -1,0 +1,26 @@
+[
+  {
+    "rank": 1,
+    "idx": 3511,
+    "start": "2025-08-15 20:06",
+    "path": "/root/autodl-fs/fotn-sketch1/runs/ring16_ipix/cases/gt_2x2/case1_20250815_2006.png"
+  },
+  {
+    "rank": 2,
+    "idx": 2680,
+    "start": "2025-08-12 09:00",
+    "path": "/root/autodl-fs/fotn-sketch1/runs/ring16_ipix/cases/gt_2x2/case2_20250812_0900.png"
+  },
+  {
+    "rank": 3,
+    "idx": 3399,
+    "start": "2025-08-15 08:54",
+    "path": "/root/autodl-fs/fotn-sketch1/runs/ring16_ipix/cases/gt_2x2/case3_20250815_0854.png"
+  },
+  {
+    "rank": 4,
+    "idx": 4370,
+    "start": "2025-08-19 10:00",
+    "path": "/root/autodl-fs/fotn-sketch1/runs/ring16_ipix/cases/gt_2x2/case4_20250819_1000.png"
+  }
+]

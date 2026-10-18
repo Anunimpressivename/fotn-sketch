@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Checkpoints and binary artifacts
+*.pt
+*.npz
+*.nc
+*.pid
+
+# Training runtime
+**/train.log
+.DS_Store

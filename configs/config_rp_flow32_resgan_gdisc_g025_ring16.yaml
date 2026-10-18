@@ -1,0 +1,73 @@
+# Ablation vs g025: same losses / disc, but pool is ring-softmax instead of MaxPool.
+# 5x5 Chebyshev rings 1 / 0.5 / 0.25 scale the softmax logits; values stay raw.
+# τ=16 on [0,128]. stride=1.
+#
+#   python -u train_resgan.py --config configs/config_rp_flow32_resgan_gdisc_g025_ring16.yaml
+seed: 42
+device: cuda
+data:
+  train_root: /root/autodl-tmp/datasets/DATA_2023_S
+  eval_root: /root/autodl-tmp/DATA_2025_S
+  train_months: ["202305", "202306", "202307", "202308"]
+  val_months: ["202505"]
+  test_months: ["202508"]
+  t_in: 10
+  t_out: 30
+  image_hw: [64, 64]
+  batch_size: 12
+  num_workers: 4
+  use_precip: false
+model:
+  base_ch: 16
+  flow_base_ch: 32
+  res_base_ch: 32
+  n_noise: 4
+  residual_cond: true
+  clamp_state: 1.5
+  clamp_s: 1.5
+  a_init: 1.0
+  u_scale: 2.0
+  delta_scale: 0.25
+loss:
+  advect_radar: 1.0
+  advect_pwv: 4.0
+  evo_radar: 1.0
+  evo_pwv: 1.0
+  smooth: 0.05
+  gate: 0.15
+  gate_leads: 4
+  gan_drop_evo_radar: true
+train:
+  lr: 2.0e-4
+  weight_decay: 1.0e-4
+  grad_clip: 1.0
+  amp: true
+  ckpt_dir: /root/autodl-fs/fotn-sketch1/runs/ring16
+  init_ckpt: /root/autodl-fs/fotn-sketch1/runs/ring16/best_stage_res.pt
+  skip_curriculum: true
+  stages: []
+  gan:
+    epochs: 12
+    res_lr: 3.0e-5
+    evo_lr: 3.0e-6
+    disc_lr: 3.0e-5
+    beta_adv: 6.0
+    lambda_pool_mse: 0.01
+    lambda_pixel_mae: 0.15
+    lambda_global_adv: 0.25
+    pool_mode: ring_softmax
+    pool_kernel_size: 5
+    pool_stride: 1
+    pool_tau: 16.0
+    global_disc_base_c: 16
+    patch_frames: 4
+    patch_biased: 4
+    patch_uniform: 4
+    patch_size: 16
+    patch_temperature: 32.0
+    patch_disc_base_c: 32
+    pretrain_stop_d: 0.9
+    pretrain_min_gap: 1.0
+    pretrain_min_steps: 100
+    pretrain_max_steps: 1472
+    log_every: 20

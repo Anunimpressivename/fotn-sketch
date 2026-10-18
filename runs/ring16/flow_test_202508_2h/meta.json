@@ -1,0 +1,53 @@
+{
+  "ckpt": "/root/autodl-fs/fotn-sketch1/runs/ring16/best_csi40.pt",
+  "config": "/autodl-fs/data/fotn-sketch1/config_rp_flow32_resgan_gdisc_g025_ring16.yaml",
+  "split": "test",
+  "months": [
+    "202508"
+  ],
+  "n": 366,
+  "every_hours": 2,
+  "lead_index": 0,
+  "step_minutes": 6,
+  "issue_time": "last input frame; this flow advects that frame across the next 6 minutes",
+  "components": [
+    "x_east",
+    "y_south"
+  ],
+  "units": "grid_cells_per_step",
+  "u_scale": 2.0,
+  "image_hw": [
+    64,
+    64
+  ],
+  "arrays": {
+    "issue_time": [
+      366
+    ],
+    "u_radar": [
+      366,
+      2,
+      64,
+      64
+    ],
+    "u_pwv": [
+      366,
+      2,
+      64,
+      64
+    ],
+    "radar_issue": [
+      366,
+      64,
+      64
+    ],
+    "pwv_issue": [
+      366,
+      64,
+      64
+    ]
+  },
+  "radar_issue": "intensity (255-pixel)/255 at issue time; display scale = intensity*128",
+  "pwv_issue": "same intensity encoding as the training PNGs, at issue time",
+  "written": "2026-10-10T13:06:11"
+}
